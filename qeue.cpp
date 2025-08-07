@@ -25,15 +25,17 @@ public:
             cout << "Queue is full!" << endl;
             return;
         }
-        arr[rear++] = value;
+        arr[rear] = value;
+        rear++;
     }
     int dequeue() {
         if (front == rear) {
             cout << "Queue is empty!" << endl;
             return -1;
         }
+        int v = arr[front];
         front++;
-        return arr[front];
+        return v; 
     }
 };
 
